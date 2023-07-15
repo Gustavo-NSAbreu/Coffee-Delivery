@@ -24,4 +24,8 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 1rem;
   }
   
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Baloo 2', sans-serif;
+  }
+
 `;
