@@ -6,7 +6,6 @@ import CoffeeCup from "../../../../assets/coffeeCup.svg";
 export default function Title() {
   return (
     <TitleContainer>
-
       <div>
         <TitleSection>
           <h1>Encontre o café perfeito para qualquer hora do dia</h1>

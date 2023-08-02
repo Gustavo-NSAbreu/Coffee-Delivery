@@ -6,7 +6,7 @@ export const TitleContainer = styled.section`
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  
+  padding-bottom: 5.87rem;
   gap: 3.5rem;
 
   img {
