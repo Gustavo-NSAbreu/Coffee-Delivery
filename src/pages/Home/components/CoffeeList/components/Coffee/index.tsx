@@ -13,11 +13,6 @@ interface CoffeeProps {
 
 export default function Coffee({ image, name, description, price, tags }: CoffeeProps) {
 
-  const formatedPrice = new Intl.NumberFormat('pt-BR', {
-    style: 'currency',
-    currency: 'BRL'
-  }).format(price);
-
   return (
     <CoffeeContainer>
       <img src={image} />
@@ -27,7 +22,12 @@ export default function Coffee({ image, name, description, price, tags }: Coffee
       <h2>{name}</h2>
       <p>{description}</p>
       <div>
-        <span>{formatedPrice}</span>
+        <span>
+          R$
+          <strong>
+            {price}
+          </strong>
+        </span>
         <div>
           <NumberInput />
           <button>
