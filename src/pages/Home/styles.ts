@@ -9,8 +9,5 @@ export const HomeContainer = styled.main`
   line-height: 1.3;
   
   justify-content: center;
-  &:first-child {
-  }
-    
 
 `;

@@ -23,6 +23,24 @@ export const CoffeeContainer = styled.div`
     margin-top: calc(0px - 1.25rem)
   }
 
+  h2 {
+    font-family: Baloo 2;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 130%;
+  }
+
+  p {
+    font-family: Roboto;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+
+    color: ${(props) => props.theme["gray-600"]};
+  }
+
   div {
     display: flex;
     flex-direction: row;

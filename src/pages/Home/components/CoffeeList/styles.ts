@@ -2,15 +2,13 @@ import { styled } from "styled-components";
 
 export const CoffeeListContainer = styled.section`
 
-  
-
   display: flex;
+  flex: 1;
   flex-direction: column;
   align-items: flex-start;
-  padding: 2rem 10rem 0;
 
   gap: 3.38rem;
-  width: 100%;
+  width: 70rem;
 
   h1 {
     font-family: Baloo 2;
@@ -18,10 +16,20 @@ export const CoffeeListContainer = styled.section`
     font-style: normal;
     font-weight: 700;
     line-height: 130%;
+    
+    align-self: flex-start;
   }
 
   @media (max-width: 1400px) {
-    align-items: center;
+    width: 52rem;
+  }
+
+  @media (max-width: 1130px) {
+    width: 34rem;
+  }
+
+  @media (max-width: 930px) {
+    width: 16rem;
   }
 `;
 
