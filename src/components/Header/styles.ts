@@ -40,6 +40,8 @@ export const HeaderContainer = styled.header`
       justify-content: center;
       align-items: center;
 
+      position: relative;
+
       padding: 0.5rem;
       border-radius: 6px;
 
@@ -48,4 +50,29 @@ export const HeaderContainer = styled.header`
     }
   }
 
+`;
+
+export const CartContentIndicator = styled.div`
+  display: flex;
+  width: 1.25rem;
+  height: 1.25rem;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  right: -0.52156rem;
+
+  top: -0.5rem;
+
+  border-radius: 62.5rem;
+  background: ${(props) => props.theme["yellow-700"]};
+  color: ${(props) => props.theme["gray-100"]};
+
+  text-align: center;
+  font-family: Roboto;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%;
+  letter-spacing: -0.045rem;
 `;

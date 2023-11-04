@@ -10,7 +10,8 @@ export default function CoffeeList() {
         {coffees
           .map((coffee) => 
             <Coffee 
-              key={coffee.id} 
+              key={coffee.id}
+              id={coffee.id} 
               image={coffee.image}
               name={coffee.name}
               description={coffee.description}

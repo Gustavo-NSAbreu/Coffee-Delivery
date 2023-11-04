@@ -1,9 +1,13 @@
 import { ShoppingCart } from "phosphor-react";
 import { Tag } from "../../../../../../../Coffee/data";
 import NumberInput from "../../../../../../components/NumberInput";
-import { CoffeeContainer, TagsContainer } from "./styles";
+import { AddToCartButton, CoffeeContainer, TagsContainer, PriceTag } from "./styles";
+import { useContext, useState } from "react";
+import { CartContext } from "../../../../../../context/CartContext";
+
 
 interface CoffeeProps {
+  id: string;
   image: string;
   name: string;
   description: string;
@@ -11,8 +15,16 @@ interface CoffeeProps {
   tags: Tag[];
 }
 
-export default function Coffee({ image, name, description, price, tags }: CoffeeProps) {
+export default function Coffee({ id, image, name, description, price, tags }: CoffeeProps) {
 
+  const { setCoffeeAmount } = useContext(CartContext);
+
+  const [amount, setAmount] = useState(1);
+
+  function setCoffeeAmountInCart() {
+    setCoffeeAmount(id, amount);
+  }
+  
   return (
     <CoffeeContainer>
       <img src={image} />
@@ -22,17 +34,14 @@ export default function Coffee({ image, name, description, price, tags }: Coffee
       <h2>{name}</h2>
       <p>{description}</p>
       <div>
-        <span>
-          R$
-          <strong>
-            {price}
-          </strong>
-        </span>
+        <PriceTag>
+          {Intl.NumberFormat('pt-BR', {minimumSignificantDigits: 3, }).format(price)}
+        </PriceTag>
         <div>
-          <NumberInput />
-          <button>
+          <NumberInput amount={amount} setAmount={setAmount} />
+          <AddToCartButton onClick={setCoffeeAmountInCart}>
             <ShoppingCart weight="fill" size={22} />
-          </button>
+          </AddToCartButton>
         </div>
       </div>
     </CoffeeContainer>

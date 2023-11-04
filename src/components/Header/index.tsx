@@ -1,9 +1,14 @@
 import { ShoppingCart, MapPin } from 'phosphor-react';
-import { HeaderContainer } from './styles';
+import { CartContentIndicator, HeaderContainer } from './styles';
 import logo from '../../assets/logo.svg';
 import { NavLink } from 'react-router-dom';
+import { useContext } from 'react';
+import { CartContext } from '../../context/CartContext';
 
 export default function Header() {
+
+const {totalAmount} = useContext(CartContext);
+
 	return (
 		<HeaderContainer>
       <img src={logo} />
@@ -16,7 +21,6 @@ export default function Header() {
 					/>
           <p>
             Rio de Janeiro, RJ
-            {/* Porto Alegre, RS */}
           </p>
 				</NavLink>
 				<NavLink to='/checkout'>
@@ -24,6 +28,7 @@ export default function Header() {
 						size={22}
 						weight='fill'
 					/>
+					{totalAmount ? <CartContentIndicator>{totalAmount}</CartContentIndicator> : null}	
 				</NavLink>
 			</nav>
 		</HeaderContainer>

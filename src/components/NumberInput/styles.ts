@@ -30,7 +30,10 @@ export const NumberInputContainer = styled.div`
   input {
     border: none;
     background: transparent;
-    text-align: center; 
+    text-align: center;
+    width: 1rem;
+
+    color: ${(props) => props.theme["gray-900"]};
 
     -webkit-appearance: textfield;
   }

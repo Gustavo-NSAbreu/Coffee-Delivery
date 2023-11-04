@@ -30,6 +30,9 @@ export const CoffeeListContainer = styled.section`
 
   @media (max-width: 930px) {
     width: 16rem;
+    h1 {
+      align-self: center;
+    }
   }
 `;
 

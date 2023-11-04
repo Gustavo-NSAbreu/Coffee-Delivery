@@ -1,6 +1,6 @@
 export type Tag = 'TRADICIONAL' | 'GELADO' | 'COM LEITE' | 'ESPECIAL' | 'ALCOÓLICO';
 
-interface Coffee {
+export interface Coffee {
   id: string;
   image: string;
   name: string;
