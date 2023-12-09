@@ -4,6 +4,7 @@ import NumberInput from "../../../../../../components/NumberInput";
 import { AddToCartButton, CoffeeContainer, TagsContainer, PriceTag } from "./styles";
 import { useContext, useState } from "react";
 import { CartContext } from "../../../../../../context/CartContext";
+import { formatPrice } from "../../../../../../helper/formatPrice";
 
 
 interface CoffeeProps {
@@ -35,10 +36,10 @@ export default function Coffee({ id, image, name, description, price, tags }: Co
       <p>{description}</p>
       <div>
         <PriceTag>
-          {Intl.NumberFormat('pt-BR', {minimumSignificantDigits: 3, }).format(price)}
+          {formatPrice(price, 3)}
         </PriceTag>
         <div>
-          <NumberInput amount={amount} setAmount={setAmount} />
+          <NumberInput size="large" amount={amount} setAmount={setAmount} />
           <AddToCartButton onClick={setCoffeeAmountInCart}>
             <ShoppingCart weight="fill" size={22} />
           </AddToCartButton>

@@ -61,18 +61,13 @@ export const CartContentIndicator = styled.div`
 
   position: absolute;
   right: -0.52156rem;
-
   top: -0.5rem;
 
-  border-radius: 62.5rem;
+  border-radius: 62rem;
   background: ${(props) => props.theme["yellow-700"]};
   color: ${(props) => props.theme["gray-100"]};
 
-  text-align: center;
-  font-family: Roboto;
   font-size: 0.75rem;
   font-style: normal;
   font-weight: 700;
-  line-height: 130%;
-  letter-spacing: -0.045rem;
 `;

@@ -1,13 +1,22 @@
 import { styled } from "styled-components";
 
-export const NumberInputContainer = styled.div`
+const NUMBER_INPUT_HEIGHT = {
+  large: "2.375rem",
+  small: "2rem",
+} as const;
+
+interface NumberInputContainerProps {
+  size: keyof typeof NUMBER_INPUT_HEIGHT;
+}
+
+export const NumberInputContainer = styled.div<NumberInputContainerProps>`
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 0.25rem;
 
-  height: 2.375rem;
-  width: fit-content;
+  width: 4.5rem;
+  height: ${(props) => NUMBER_INPUT_HEIGHT[props.size]};
   padding: 0.5rem;
 
   border-radius: 0.375rem;

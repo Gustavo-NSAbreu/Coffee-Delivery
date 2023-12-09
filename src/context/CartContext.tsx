@@ -1,6 +1,13 @@
 import { ReactNode, createContext, useState } from "react";
 import { coffees } from "../../Coffee/data";
 
+interface Cart {
+  id: string;
+  image: string;
+  name: string;
+  basePrice: number;
+  amount: number;
+}
 interface CartContextData {
   cart: Cart[];
   totalAmount: number;
@@ -13,23 +20,15 @@ interface CartContextProviderProps {
   children: ReactNode;
 }
 
-interface Cart {
-  id: string;
-  image: string;
-  name: string;
-  basePrice: number;
-  amount: number;
-}
-
 const defaultCart: Cart[] = coffees.map((coffee) => {  
   return {
       id: coffee.id,
       image: coffee.image,
       name: coffee.name,
       basePrice: coffee.price, 
-      amount: 0} as Cart
-  }
-);
+      amount: 0
+  } as Cart
+});
 
 export default function CartContextProvider({ children }: CartContextProviderProps) {
   const [cart, setCart] = useState<Cart[]>(defaultCart);
@@ -41,7 +40,7 @@ export default function CartContextProvider({ children }: CartContextProviderPro
       if (coffee.id === id) {
         return {
           ...coffee,
-          amount: coffee.amount + amount,
+          amount: coffee.amount + amount >= 0 ? coffee.amount + amount : coffee.amount,
         }
       }
       
@@ -63,4 +62,4 @@ export default function CartContextProvider({ children }: CartContextProviderPro
       {children}
     </CartContext.Provider>
   );
-}
+} 

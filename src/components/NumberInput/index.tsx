@@ -2,6 +2,7 @@ import { Minus, Plus } from "phosphor-react";
 import { NumberInputContainer } from "./styles";
 
 interface NumberInputProps {
+  size: "small" | "large";
   amount: number;
   setAmount: React.Dispatch<React.SetStateAction<number>>
 }
@@ -9,18 +10,20 @@ interface NumberInputProps {
 const MINIMUM_AMOUNT = 1;
 const MAXIMUM_AMOUNT = 10;
 
-export default function NumberInput({ amount, setAmount }: NumberInputProps) {
+export default function NumberInput({ size, amount, setAmount }: NumberInputProps) {
 
-  function handleDecreaseAmount() {
+  function handleDecreaseAmount(event: React.MouseEvent<HTMLButtonElement>) {
+    event.preventDefault();
     setAmount((state) => state > MINIMUM_AMOUNT ? state - 1 : state);
   }
 
-  function handleIncreaseAmount() {
+  function handleIncreaseAmount(event: React.MouseEvent<HTMLButtonElement>) {
+    event.preventDefault();
     setAmount((state) => state < MAXIMUM_AMOUNT ? state + 1 : state);
   }
 
   return (
-    <NumberInputContainer>
+    <NumberInputContainer size={size}>
       <button onClick={handleDecreaseAmount}>
         <Minus size={14} />
       </button>
