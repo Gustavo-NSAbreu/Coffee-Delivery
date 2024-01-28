@@ -1,8 +1,8 @@
 import {  useState } from "react";
-import NumberInput from "../../../../../../components/NumberInput";
+import NumberInput from "../../../../components/NumberInput";
 import { CoffeeContainer, MainCardSection, MiddleSection, PriceTag, RemoveButton } from "./styles";
 import { Trash } from "phosphor-react";
-import { formatPrice } from "../../../../../../helper/formatPrice";
+import { formatPrice } from "../../../../helper/formatPrice";
 
 interface CoffeeProps {
   id: string;

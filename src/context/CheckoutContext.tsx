@@ -1,16 +1,16 @@
 import { ReactNode, createContext, useState } from "react";
 
-interface DeliveryAddress {
-    address: string;
-    city: string;
-    state: string;
-    zip: string;
-    country: string;
+export interface DeliveryAddress {
+  cep: string;
+  street: string;
+  number: string;
+  complement: string;
+  neighborhood: string;
+  city: string;
+  state: string;
 }
 
-interface PaymentMethod {
-  type: 'creditCard' | 'debitCard' | 'cash';
-}
+export type PaymentMethod = 'creditCard' | 'debitCard' | 'cash';
 
 interface CheckoutContextData {
   deliveryAddress: DeliveryAddress;
