@@ -12,6 +12,12 @@ export interface DeliveryAddress {
 
 export type PaymentMethod = 'creditCard' | 'debitCard' | 'cash';
 
+export const PaymentMethodLabels: { [key in PaymentMethod]: string } = {
+  'creditCard': 'Cartão de Crédito',
+  'debitCard': 'Cartão de Débito',
+  'cash': 'Dinheiro',
+};
+
 interface CheckoutContextData {
 	deliveryAddress: DeliveryAddress;
 	paymentMethod: PaymentMethod;

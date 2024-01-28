@@ -4,6 +4,7 @@ import logo from '../../assets/logo.svg';
 import { NavLink } from 'react-router-dom';
 import { useContext } from 'react';
 import { CartContext } from '../../context/CartContext';
+import { routes } from '../../config/config';
 
 export default function Header() {
 	const { totalAmount } = useContext(CartContext);
@@ -13,14 +14,14 @@ export default function Header() {
 			<img src={logo} />
 
 			<nav>
-				<NavLink to='/'>
+				<NavLink to={routes.HOME}>
 					<MapPin
 						size={22}
 						weight='fill'
 					/>
 					<p>Rio de Janeiro, RJ</p>
 				</NavLink>
-				<NavLink to='/checkout'>
+				<NavLink to={routes.CHECKOUT}>
 					<ShoppingCart
 						size={22}
 						weight='fill'

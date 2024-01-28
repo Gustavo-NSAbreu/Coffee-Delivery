@@ -110,7 +110,7 @@ export default function Checkout() {
 		setAddress(address);
 		setPayment(paymentMethod);
 		reset();
-		navigate('/confirmedOrder');
+		navigate('/success');
 	}
 
 	return (
