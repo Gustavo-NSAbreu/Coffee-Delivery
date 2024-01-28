@@ -6,29 +6,28 @@ import { useContext } from 'react';
 import { CartContext } from '../../context/CartContext';
 
 export default function Header() {
-
-const {totalAmount} = useContext(CartContext);
+	const { totalAmount } = useContext(CartContext);
 
 	return (
 		<HeaderContainer>
-      <img src={logo} />
-      
+			<img src={logo} />
+
 			<nav>
 				<NavLink to='/'>
 					<MapPin
 						size={22}
 						weight='fill'
 					/>
-          <p>
-            Rio de Janeiro, RJ
-          </p>
+					<p>Rio de Janeiro, RJ</p>
 				</NavLink>
 				<NavLink to='/checkout'>
 					<ShoppingCart
 						size={22}
 						weight='fill'
 					/>
-					{totalAmount ? <CartContentIndicator>{totalAmount}</CartContentIndicator> : null}	
+					{totalAmount ? (
+						<CartContentIndicator>{totalAmount}</CartContentIndicator>
+					) : null}
 				</NavLink>
 			</nav>
 		</HeaderContainer>

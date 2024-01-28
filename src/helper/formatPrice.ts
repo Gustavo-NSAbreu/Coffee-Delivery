@@ -1,6 +1,6 @@
 export function formatPrice(price: number) {
-    return new Intl.NumberFormat("pt-BR", {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2,
-    }).format(price);
+	return new Intl.NumberFormat('pt-BR', {
+		minimumFractionDigits: 2,
+		maximumFractionDigits: 2,
+	}).format(price);
 }
