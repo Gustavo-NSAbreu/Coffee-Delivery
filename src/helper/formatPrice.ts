@@ -1,6 +1,3 @@
 export function formatPrice(price: number) {
-	return new Intl.NumberFormat('pt-BR', {
-		minimumFractionDigits: 2,
-		maximumFractionDigits: 2,
-	}).format(price);
+	return price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 }
