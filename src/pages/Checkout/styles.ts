@@ -129,6 +129,25 @@ export const AddressInput = styled(BaseInput)`
 	width: 35rem;
 `;
 
+export const ComplementInputWrapper = styled.div`
+  position: relative;
+  display: inline-block;
+  width: 100%;
+`;
+
+export const SecondPlaceholder = styled.span`
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: Roboto;
+	font-size: 0.75rem;
+	font-style: italic;
+	font-weight: 400;
+	line-height: 130%;
+  color: #aaa; /* Adjust color to match your input's placeholder color */
+`;
+
 export const ComplementInput = styled(BaseInput)`
 	flex-grow: 1.845;
 `;

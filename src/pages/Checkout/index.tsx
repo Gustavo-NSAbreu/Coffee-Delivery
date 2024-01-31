@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import * as zod from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import {
@@ -8,12 +8,14 @@ import {
 	CheckoutContainer,
 	CityInput,
 	ComplementInput,
+	ComplementInputWrapper,
 	DeliveryAddressContainer,
 	DeliveryAddressTitleContainer,
 	InfoContainer,
 	PaymentMethodContainer,
 	PaymentMethodTitleContainer,
 	RadioInputContainer,
+	SecondPlaceholder,
 	SelectedCoffeesContainer,
 	StateInput,
 } from './styles';
@@ -113,6 +115,8 @@ export default function Checkout() {
 		navigate('/success');
 	}
 
+	const [hasInput, setHasInput] = useState(false);
+
 	return (
 		<CheckoutContainer onSubmit={handleSubmit(handleDeliveryAddressForm)}>
 			<div>
@@ -143,11 +147,15 @@ export default function Checkout() {
 									placeholder='Número'
 									{...register('number')}
 								/>
-								<ComplementInput
-									type='text'
-									placeholder='Complemento'
-									{...register('complement')}
-								/>
+								<ComplementInputWrapper>
+									<ComplementInput
+										type='text'
+										placeholder='Complemento'
+										{...register('complement')}
+										onInput={(e: React.ChangeEvent<HTMLInputElement>) => setHasInput(e.currentTarget.value !== '')}
+									/>
+									{!hasInput && <SecondPlaceholder>Opcional</SecondPlaceholder>}
+								</ComplementInputWrapper>
 							</div>
 							<div>
 								<BaseInput
@@ -259,4 +267,4 @@ export default function Checkout() {
 			</section>
 		</CheckoutContainer>
 	);
-}
+};
